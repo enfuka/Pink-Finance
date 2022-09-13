@@ -1,2 +1,2 @@
 # cs50-finance
-Mock stock trading website using Flask and jQuery
+Mock stock trading website built using Flask and jQuery
