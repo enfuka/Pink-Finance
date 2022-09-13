@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Main
+{% endblock %}
+
+{% block main %}
+    <div>
+        <nobr><h4 style="text-align:right;">Current Cash:</h4><h5 style="text-align:right; color:blue;">${{ cash }}</h5></nobr>
+        <nobr><h4 style="text-align:right;">Grand Total:</h4><h5 style="text-align:right; color:green;">${{ grand }}</h5></nobr>
+    </div>
+
+    <table style="width:100%">
+        <tr>
+            <th>Stock</th>
+            <th>Symbol</th>
+            <th>Shares</th>
+            <th>Current Price</th>
+            <th>Total Value</th>
+        </tr>
+      {% for row in book %}
+        <tr>
+            <td>
+                <form style="float:left; display:inline-block;" action="/" method="post">
+                    <input type="text" name="count" size="1" autocomplete="off">
+                    <button type="submit" name="button" value="{{ row['stock'] }}">Sell</button>
+                </form>
+            {{ row['name'] }}
+            </td>
+            <td>{{ row['stock'] }}</td>
+            <td>{{ row['quantity'] }}</td>
+            <td>${{ row['current'] }}</td>
+            <td>${{ row['total'] }}</td>
+        </tr>
+
+
+      {% endfor %}
+
+
+    </table>
+    {{ getsym }}
+    {% endblock %}
+
+
+

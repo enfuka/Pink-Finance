@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Bought
+{% endblock %}
+
+{% block main %}
+<div class="alert alert-success" role="alert">
+  SOLD!
+</div>
+    <table style="width:100%">
+  <tr>
+    <th>Stock</th>
+    <th>Quantity</th>
+    <th>Total Price</th>
+  </tr>
+  <tr>
+    <td>{{ name }}</td>
+    <td>{{ number }}</td>
+    <td>{{ total }}</td>
+  </tr>
+
+</table>
+{% endblock %}

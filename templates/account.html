@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Account
+{% endblock %}
+
+{% block main %}
+    <h5 style="color:green;">{{ session['username']}}</h5>
+    <p></p>
+    <p></p>
+    <h6><u>Change Password</u></h6>
+    <form action="/account" method="post">
+        <div class="form-group">
+            <input class="form-control" name="newpassword" placeholder="New Password" type="password">
+        </div>
+        <p>Min. 6 characters, must include numbers and letters.</p>
+        <div class="form-group">
+            <input class="form-control" name="newconfirmation" placeholder="Password Again" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Change Password</button>
+    </form>
+{% endblock %}

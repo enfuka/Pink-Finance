@@ -1,0 +1,38 @@
+
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+
+{% block main %}
+
+    <table style="width:100%">
+        <tr>
+            <th>Action</th>
+            <th>Stock</th>
+            <th>Shares</th>
+            <th>Price</th>
+            <th>Total</th>
+            <th>Time</th>
+        </tr>
+      {% for row in log %}
+        <tr{% if row['action'] == 'buy' %} class="buy" {% else %} class="sell" {% endif %}>
+            <td>{{ row['action'] }}</td>
+            <td>{{ row['stock'] }}</td>
+            <td>{{ row['quantity'] }}</td>
+            <td>${{ row['price'] }}</td>
+            <td>${{ row['total'] }}</td>
+            <td>{{ row['time'] }}</td>
+        </tr>
+
+
+      {% endfor %}
+
+    </table>
+
+
+    {% endblock %}
+
+
