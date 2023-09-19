@@ -1,4 +1,4 @@
-# cs50-finance
+# Pink-Finance
 Mock stock trading website built using Flask and jQuery
 
 This website was built as the final project for Harvard's CS50X course.
